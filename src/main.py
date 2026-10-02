@@ -21,15 +21,17 @@ MENU = """
 
 
 def show(students):
-    """Print students as a simple table."""
+    """Print students as a table; column widths fit the longest value."""
     if not students:
         print("No students found.")
         return
-    print(f"{'ID':<12}{'Name':<24}{'Email':<28}{'Course':<12}{'Year'}")
-    print("-" * 80)
-    for s in students:
-        print(f"{s.student_id:<12}{s.name:<24}{s.email:<28}{s.course:<12}{s.year_level}")
-
+    headers = ("ID", "Name", "Email", "Course", "Year")
+    rows = [(s.student_id, s.name, s.email, s.course, str(s.year_level)) for s in students]
+    widths = [max(len(h), *(len(r[i]) for r in rows)) + 2 for i, h in enumerate(headers)]
+    print("".join(h.ljust(w) for h, w in zip(headers, widths)))
+    print("-" * sum(widths))
+    for row in rows:
+        print("".join(c.ljust(w) for c, w in zip(row, widths)))
 
 def ask(label, current=None):
     """Prompt for a value; pressing Enter keeps the current one (for updates)."""
