@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+.pytest_cache/
+
+# Runtime files
+logs/*.log
+exports/
+data/*.bak
+data/*.tmp

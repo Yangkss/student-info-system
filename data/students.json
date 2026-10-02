@@ -1,0 +1,16 @@
+[
+  {
+    "student_id": "2024-001",
+    "name": "Maria Santos",
+    "email": "maria.santos@example.com",
+    "course": "BSIT",
+    "year_level": 2
+  },
+  {
+    "student_id": "2024-002",
+    "name": "Juan Dela Cruz",
+    "email": "juan.delacruz@example.com",
+    "course": "BSCS",
+    "year_level": 3
+  }
+]

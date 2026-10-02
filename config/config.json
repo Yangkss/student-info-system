@@ -1,0 +1,6 @@
+{
+  "data_file": "data/students.json",
+  "log_file": "logs/app.log",
+  "log_level": "INFO",
+  "export_dir": "exports"
+}
